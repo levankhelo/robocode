@@ -9,7 +9,7 @@ services:
     hostname: robocode
     network_mode: host
     environment: 
-      - DISPLAY=${ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'}:0
+      - DISPLAY=${ROBOCODE-LOCAL-IP}:0
     volumes: 
-      - shared:/root/share/robocode/1.9.3.7
+      - ./shared:/root/share/robocode/1.9.3.7
     command: robocode
