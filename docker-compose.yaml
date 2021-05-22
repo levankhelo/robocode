@@ -1,7 +1,6 @@
 version: '3.4'
 
 services:
-
   app:
     build:
       dockerfile: build/Dockerfile
@@ -9,7 +8,7 @@ services:
     hostname: robocode
     network_mode: host
     environment: 
-      - DISPLAY=${ROBOCODE-LOCAL-IP}:0
+      - DISPLAY=${ROBOCODE_LOCAL_IP}:0
     volumes: 
-      - ./shared:/root/share/robocode/1.9.3.7
+      - ./share:/root/share
     command: robocode
