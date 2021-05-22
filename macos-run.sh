@@ -1,8 +1,16 @@
 #!/bin/bash
 
-if ! command -v xquartz > /dev/null; then brew install xquartz;  else echo "Xquartz already installed"; fi
+if ! command -v xquartz > /dev/null; then 
+    brew install xquartz;  
+else 
+    echo "Xquartz already installed"; 
+fi
 
-if ! command -v socat > /dev/null; then brew install socat; else echo "SOCAT already installed"; fi
+if ! command -v socat > /dev/null; then 
+    brew install socat; 
+else 
+    echo "SOCAT already installed"; 
+fi
 
 osascript -e 'tell application "Terminal" to do script "socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\\\"$DISPLAY\\\""'
 
