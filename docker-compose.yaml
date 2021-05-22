@@ -10,5 +10,5 @@ services:
     environment: 
       - DISPLAY=${ROBOCODE_LOCAL_IP}:0
     volumes: 
-      - ./share:/root/share
+      - ./share:/root/.local/share
     command: robocode
