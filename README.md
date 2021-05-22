@@ -5,7 +5,6 @@ We will need to get `xhost` and `socat` to run GUI display from container
 
 ## TL;DR
 ```bash
-
 if ! command -v xquartz > /dev/null; then brew install xquartz;  else echo "Xquartz already installed"; fi
 
 if ! command -v socat > /dev/null; then brew install socat; else echo "SOCAT already installed"; fi
@@ -18,21 +17,13 @@ docker-compose up --build
 ```
 ### Install X11
 ```bash
-if ! command -v xquartz > /dev/null; then
-    brew install xquartz;
-else
-    echo "Xquartz already installed";
-fi
+brew install xquartz;
 ```
-After installation, Open up *xquartz* using command `xquartz` or icon click, go to:   
+After installation, Open up *xquartz* using command `xquartz` or icon click, then:   
 `XQUARTZ` > `Preferences` > `Security` > `Allow connections from network clients` > `✅ (check)`
 ### Install SOCAT
 ```bash
-if ! command -v socat > /dev/null; then
-    brew install socat;
-else
-    echo "SOCAT already installed";
-fi
+brew install socat;
 ```
 
 ### Run Socat 
