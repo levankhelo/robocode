@@ -12,7 +12,7 @@ else
     echo "SOCAT already installed"; 
 fi
 
-osascript -e 'tell application "Terminal" to do script "socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\\\"$DISPLAY\\\""'
+osascript -e 'tell application "Terminal" to do script "TMOUT=0 && kill -9 $(ps aux | grep socat | awk {'print $2'}) && socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\\\"$DISPLAY\\\""'
 
 export ROBOCODE_LOCAL_IP=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
 
